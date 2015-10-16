@@ -1,0 +1,35 @@
+#sidebar {
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+#sidebar, #sidebar a {
+    color: #ffffff;
+    background-color: #021C35;
+}
+
+.navbar {
+    background-color: #55ACEE;
+    border-bottom-color: #55ACEE;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    color: black;
+}
+
+.navbar-default .navbar-nav li a {
+    color: white;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background-color: white;
+}
+
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: -100px;
+    overflow-x: hidden;
+}

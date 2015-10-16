@@ -1,0 +1,31 @@
+{
+  "title": "GET members",
+  "description": "Returns list of all parliament members.",
+  "url": "http://api.otvoreniparlament.rs/v1/members",
+  "info":["JSON", "NO", "NO"],
+  "params": [
+    {
+      "name": "limit",
+      "req": "Optional",
+      "desc": "Specifies maximum number of members to return in a single request. ",
+      "example": 30,
+      "default": 10
+    },
+    {
+      "name": "page",
+      "req": "Optional",
+      "desc": "Used for result pagination; specifies a page to be returned. It should be combined with a number of parliament members returned on the page is specified by the limit parameter.",
+      "example": 2,
+      "default": 1
+    },
+    {
+      "name": "sort",
+      "req": "Optional",
+      "desc": "Used for sorting the result; specifies order of a result to be returned. Possible values are ASC for ascending and DESC for descending order.",
+      "example": "DESC",
+      "default": "ASC"
+    }
+  ],
+  "request": "http://api.otvoreniparlament.rs/v1/members?page=2&limit=3",
+  "result": "[{\"meta\":{\"href\":\"http://localhost:9090/api/members/281785\"},\"id\":281785,\"name\":\"Dragan\",\"lastName\":\"0. Jovanovi?\",\"birthDate\":\"01.01.1946.\",\"parties\":[{\"meta\":{\"href\":\"http://localhost:9090/api/parties/429\"},\"id\":429,\"title\":\"Socijalisti?ka partija Srbije - SPS\",\"members\":\"http://localhost:9090/api/parties/429/members\"}]},{\"meta\":{\"href\":\"http://localhost:9090/api/members/414897\"},\"id\":414897,\"name\":\"Zoran\",\"lastName\":\"0. Miloševi?\",\"birthDate\":\"01.01.1974.\",\"parties\":[{\"meta\":{\"href\":\"http://localhost:9090/api/parties/430\"},\"id\":430,\"title\":\"Srpska radikalna stranka - SRS\",\"members\":\"http://localhost:9090/api/parties/430/members\"}]},{\"meta\":{\"href\":\"http://localhost:9090/api/members/407001\"},\"id\":407001,\"name\":\"Dragan\",\"lastName\":\"0. Nikoli?\",\"birthDate\":\"01.01.1960.\",\"parties\":[{\"meta\":{\"href\":\"http://localhost:9090/api/parties/430\"},\"id\":430,\"title\":\"Srpska radikalna stranka - SRS\",\"members\":\"http://localhost:9090/api/parties/430/members\"}]}]"
+}
