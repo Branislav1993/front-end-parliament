@@ -2,7 +2,6 @@
   "docs": [
     {
       "id": "members",
-      "ctrl": "membersCtrl",
       "title": "GET members",
       "description": "Returns list of all parliament members.",
       "url": "http://api.otvoreniparlament.rs/v1/members",
@@ -39,7 +38,6 @@
     },
     {
       "id": "memberId",
-      "ctrl": "memberIdCtrl",
       "title": "GET members/{id}",
       "description": "Returns details for the specific member.",
       "url": "http://api.otvoreniparlament.rs/v1/members/{id}",
@@ -58,6 +56,28 @@
         }
       ],
       "request": "http://api.otvoreniparlament.rs/v1/members/33",
+      "result": "{\"meta\":{\"href\":\"http://localhost:9090/api/members/33\"},\"id\":33,\"name\":\"Marko\",\"lastName\":\"Markovi?\",\"birthDate\":\"01.01.1946.\",\"parties\":[{\"meta\":{\"href\":\"http://localhost:9090/api/parties/429\"},\"id\":429,\"title\":\"Partija Srbije\",\"members\":\"http://localhost:9090/api/parties/429/members\"}]}"
+    },
+    {
+      "id": "memberIdSpeech",
+      "title": "GET members/{id}/speeches",
+      "description": "Returns speeches for the specific member.",
+      "url": "http://api.otvoreniparlament.rs/v1/members/{id}/speeches",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "id",
+          "req": "Required",
+          "desc": "The id of the requested member.",
+          "example": 123,
+          "default": "/"
+        }
+      ],
+      "request": "http://api.otvoreniparlament.rs/v1/members/33/speeches",
       "result": "{\"meta\":{\"href\":\"http://localhost:9090/api/members/33\"},\"id\":33,\"name\":\"Marko\",\"lastName\":\"Markovi?\",\"birthDate\":\"01.01.1946.\",\"parties\":[{\"meta\":{\"href\":\"http://localhost:9090/api/parties/429\"},\"id\":429,\"title\":\"Partija Srbije\",\"members\":\"http://localhost:9090/api/parties/429/members\"}]}"
     }
   ]
