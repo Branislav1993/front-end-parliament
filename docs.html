@@ -1,7 +1,7 @@
-<section id="member" class="col-sm-9 col-sm-offset-3" ng-controller="memberCtrl">
-    <div class="container">
+<section id="member" class="col-sm-9 col-sm-offset-3" ng-controller="membersCtrl">
+    <div class="container" ng-repeat="d in docs">
         <div class="row">
-            <div class="col-lg-10   panel panel-default">
+            <div id="{{d.id}}" class="col-lg-10 panel panel-default">
                 <h1>{{d.title}}</h1>
 
                 <p>{{d.description}}</p>
@@ -12,7 +12,7 @@
 
                 <h3>Resource information</h3>
 
-                <div class="table-responsive col-sm-5">
+                <div class="table-responsive table-bordered col-sm-5">
                     <table class="table">
                         <tbody>
                         <tr>
@@ -34,7 +34,7 @@
                 <div class="col-sm-8">
                     <h3>Parameters</h3>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive table-bordered">
                         <table class="table">
                             <tbody>
                             <tr ng-repeat="p in d.params">
@@ -64,8 +64,7 @@
                 </div>
                 <div class="col-sm-8">
                     <h3>Example Result</h3>
-
-                    <pre><code>{{json}}</code></pre>
+                    <pre><code>{{formatJson(d.result)}}</code></pre>
                 </div>
             </div>
         </div>
