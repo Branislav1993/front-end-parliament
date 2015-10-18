@@ -1,13 +1,29 @@
 /**
  * Created by Branislav Vidojevic on 15/10/2015.
  */
-var app = angular.module("app", []);
+var app = angular.module("app", ['ngRoute', 'duScroll'])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/documentation', {
+                templateUrl: 'docs.html',
+                controller: 'DocsCtrl'
+            })
+            .when('/examples', {
+                templateUrl: 'examples.html',
+                controller: 'ExampleCtrl'
+            })
+            .when('/about', {
+                templateUrl: 'about.html',
+                controller: 'AboutCtrl'
+            })
+    });
 
-app.value
+//default scroll duration
+app.value('duScrollDuration', 850);
 
-app.controller('membersCtrl', ['$scope', '$http', function ($scope, $http) {
+app.controller('DocsCtrl', ['$scope', '$http', function ($scope, $http) {
 
-    $http.get('members.json').success(function (data) {
+    $http.get('documentation.json').success(function (data) {
         $scope.docs = data.docs;
     }).error(function () {
         console.log('Error, GET member.json failed.');
@@ -16,4 +32,13 @@ app.controller('membersCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.formatJson = function (text) {
         return JSON.stringify(JSON.parse(text), null, 2);
     }
+
+}]);
+
+app.controller('ExampleCtrl', ['$scope', function ($scope) {
+
+}]);
+
+app.controller('AboutCtrl', ['$scope', function ($scope) {
+
 }]);
