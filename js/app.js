@@ -5,15 +5,15 @@ var app = angular.module("app", ['ngRoute', 'duScroll'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/documentation', {
-                templateUrl: 'docs.html',
+                templateUrl: 'views/docs.html',
                 controller: 'DocsCtrl'
             })
             .when('/examples', {
-                templateUrl: 'examples.html',
+                templateUrl: 'views/examples.html',
                 controller: 'ExampleCtrl'
             })
             .when('/about', {
-                templateUrl: 'about.html',
+                templateUrl: 'views/about.html',
                 controller: 'AboutCtrl'
             })
     });
@@ -26,7 +26,7 @@ app.controller('DocsCtrl', ['$scope', '$http', function ($scope, $http) {
     $http.get('documentation.json').success(function (data) {
         $scope.docs = data.docs;
     }).error(function () {
-        console.log('Error, GET member.json failed.');
+        console.log('Error, GET documentation.json failed.');
     });
 
     $scope.formatJson = function (text) {
