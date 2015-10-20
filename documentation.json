@@ -38,9 +38,9 @@
     },
     {
       "id": "memberId",
-      "title": "GET members/{id}",
+      "title": "GET members/:id",
       "description": "Returns details for the specific member.",
-      "url": "http://api.otvoreniparlament.rs/v1/members/{id}",
+      "url": "http://api.otvoreniparlament.rs/v1/members/:id",
       "info": [
         "JSON",
         "NO",
@@ -60,9 +60,9 @@
     },
     {
       "id": "memberIdSpeeches",
-      "title": "GET members/{id}/speeches",
+      "title": "GET members/:id/speeches",
       "description": "Returns speeches for the specific member.",
-      "url": "http://api.otvoreniparlament.rs/v1/members/{id}/speeches",
+      "url": "http://api.otvoreniparlament.rs/v1/members/:id/speeches",
       "info": [
         "JSON",
         "NO",
@@ -118,9 +118,9 @@
     },
     {
       "id": "partyId",
-      "title": "GET parties/{id}",
+      "title": "GET parties/:id",
       "description": "Returns details for the specific political party.",
-      "url": "http://api.otvoreniparlament.rs/v1/parties/{id}",
+      "url": "http://api.otvoreniparlament.rs/v1/parties/:id",
       "info": [
         "JSON",
         "NO",
@@ -140,9 +140,9 @@
     },
     {
       "id": "partyIdMembers",
-      "title": "GET parties/{id}/members",
+      "title": "GET parties/:id/members",
       "description": "Returns members for the specific political party.",
-      "url": "http://api.otvoreniparlament.rs/v1/parties/{id}/members",
+      "url": "http://api.otvoreniparlament.rs/v1/parties/:id/members",
       "info": [
         "JSON",
         "NO",
@@ -190,39 +190,10 @@
       "result": "{\"meta\":{\"href\":\"http://localhost:9090/api/members/33\"},\"id\":33,\"name\":\"Marko\",\"lastName\":\"Markovi?\",\"birthDate\":\"01.01.1946.\",\"parties\":[{\"meta\":{\"href\":\"http://localhost:9090/api/parties/429\"},\"id\":429,\"title\":\"Partija Srbije\",\"members\":\"http://localhost:9090/api/parties/429/members\"}]}"
     },
     {
-      "id": "sessions",
-      "title": "GET sessions/",
-      "description": "Returns list of all sessions.",
-      "url": "http://api.otvoreniparlament.rs/v1/sessions",
-      "info": [
-        "JSON",
-        "NO",
-        "NO"
-      ],
-      "params": [
-        {
-          "name": "limit",
-          "req": "Optional",
-          "desc": "Specifies maximum number of sessions to return in a single request. ",
-          "example": 30,
-          "default": 10
-        },
-        {
-          "name": "page",
-          "req": "Optional",
-          "desc": "Used for result pagination; specifies a page to be returned. It should be combined with a number of sessions returned on the page that is specified by the limit parameter.",
-          "example": 2,
-          "default": 1
-        }
-      ],
-      "request": "http://api.otvoreniparlament.rs/v1/sessions?page=1&limit=2",
-      "result": "{\"meta\":{\"href\":\"http://localhost:9090/api/members/33\"},\"id\":33,\"name\":\"Marko\",\"lastName\":\"Markovi?\",\"birthDate\":\"01.01.1946.\",\"parties\":[{\"meta\":{\"href\":\"http://localhost:9090/api/parties/429\"},\"id\":429,\"title\":\"Partija Srbije\",\"members\":\"http://localhost:9090/api/parties/429/members\"}]}"
-    },
-    {
       "id": "sessionId",
-      "title": "GET sessions/{id}",
+      "title": "GET sessions/:id",
       "description": "Returns details for the specific plenary session.",
-      "url": "http://api.otvoreniparlament.rs/v1/sessions/{id}",
+      "url": "http://api.otvoreniparlament.rs/v1/sessions/:id",
       "info": [
         "JSON",
         "NO",
@@ -242,9 +213,9 @@
     },
     {
       "id": "sessionIdSpeeches",
-      "title": "GET sessions/{id}/speeches",
+      "title": "GET sessions/:id/speeches",
       "description": "Returns list of speeches for the specific plenary session.",
-      "url": "http://api.otvoreniparlament.rs/v1/sessions/{id}/speeches",
+      "url": "http://api.otvoreniparlament.rs/v1/sessions/:id/speeches",
       "info": [
         "JSON",
         "NO",
@@ -307,7 +278,7 @@
     },
     {
       "id": "speechId",
-      "title": "GET speeches/{id}",
+      "title": "GET speeches/:id",
       "description": "Returns specific speech.",
       "url": "http://api.otvoreniparlament.rs/v1/speeches/{id}",
       "info": [

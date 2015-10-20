@@ -1,14 +1,14 @@
-<section id="member" class="col-sm-9 col-sm-offset-3 col-xs-offset-4">
+<section id="member" class="col-md-8 col-md-offset-4 col-xs-offset-4">
     <div class="container" ng-repeat="d in docs">
         <div class="row">
-            <div id="{{d.id}}" class="col-lg-10 panel panel-default">
+            <div id="{{d.id}}">
                 <h1>{{d.title}}</h1>
 
                 <p>{{d.description}}</p>
 
                 <h3>Resource URL</h3>
 
-                <p>{{d.url}}</p>
+                <code>{{d.url}}</code>
 
                 <h3>Resource information</h3>
 
@@ -34,7 +34,7 @@
                 <div class="col-sm-8">
                     <h3>Parameters</h3>
 
-                    <div class="table-responsive table-bordered">
+                    <div class="table-responsive">
                         <table class="table">
                             <tbody>
                             <tr ng-repeat="p in d.params">
@@ -70,3 +70,4 @@
         </div>
     </div>
 </section>
+

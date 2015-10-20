@@ -6,7 +6,7 @@
 }
 
 #sidebar, #sidebar a {
-    color: #ffffff;
+    color: cornflowerblue;
     background-color: #021C35;
 }
 
@@ -17,6 +17,7 @@
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
     color: black;
+    background: lightblue;
 }
 
 .navbar-default .navbar-nav li a {
@@ -36,6 +37,20 @@ section {
 
 .panel {
     padding-top: 15px;
+}
+
+#sidebar > .nav-stacked > li > a:hover, #sidebar > .nav-stacked > li > .active {
+    font-size: 140%;
+    color: indianred;
+}
+
+#sidebar > .nav-stacked > li > a {
+    padding-bottom: 3px;
+    transition: all .1s linear;
+}
+
+#sidebar > .nav-stacked > li > a {
+    transform: scale(1.1);
 }
 
 /*

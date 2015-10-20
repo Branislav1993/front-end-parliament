@@ -4,6 +4,10 @@
 var app = angular.module("app", ['ngRoute', 'duScroll'])
     .config(function ($routeProvider) {
         $routeProvider
+            .when('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl'
+            })
             .when('/documentation', {
                 templateUrl: 'views/docs.html',
                 controller: 'DocsCtrl'
@@ -11,10 +15,6 @@ var app = angular.module("app", ['ngRoute', 'duScroll'])
             .when('/examples', {
                 templateUrl: 'views/examples.html',
                 controller: 'ExampleCtrl'
-            })
-            .when('/about', {
-                templateUrl: 'views/about.html',
-                controller: 'AboutCtrl'
             })
     });
 
@@ -39,6 +39,6 @@ app.controller('ExampleCtrl', ['$scope', function ($scope) {
 
 }]);
 
-app.controller('AboutCtrl', ['$scope', function ($scope) {
+app.controller('MainCtrl', ['$scope', function ($scope) {
 
 }]);
