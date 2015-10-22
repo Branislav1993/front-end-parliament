@@ -1,7 +1,10 @@
 /**
  * Created by Branislav Vidojevic on 15/10/2015.
  */
-var app = angular.module("app", ['ngRoute', 'duScroll'])
+
+var host = "http://localhost:9090/api";
+
+var app = angular.module("app", ['ngRoute', 'ngAnimate', 'duScroll', 'ui.bootstrap', 'ngResource'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
@@ -35,10 +38,48 @@ app.controller('DocsCtrl', ['$scope', '$http', function ($scope, $http) {
 
 }]);
 
-app.controller('ExampleCtrl', ['$scope', function ($scope) {
+app.controller('ExampleCtrl', ['$scope', 'memberService', function ($scope, memberService) {
+
+    $scope.maxSize = 1;
+    $scope.totalItems = 11;
+    $scope.itemsPerPage = 10;
+    $scope.currentPage = 1;
+    $scope.count = 0;
+
+   var req = memberService.MembersR.query({page: '1'}, function (data) {
+       $scope.members = data;
+   });
+
+    $scope.getMembers = function (n, text) {
+        memberService.MembersR.query({page: n.toString(), query: text}, function (data) {
+            $scope.members = data;
+            $scope.count = (n-1) * 10;
+            $scope.totalItems = n*$scope.itemsPerPage+1;
+        });
+    };
+
+    $scope.maxSize1 = 1;
+    $scope.totalItems1 = 11;
+    $scope.itemsPerPage1 = 10;
+    $scope.currentPage1 = 1;
+    $scope.count1 = 0;
+
+    $scope.getSpeeches = function(selectedMember, pageNum) {
+        memberService.SpeechesR.query({id: selectedMember.toString(), page: pageNum.toString()}, function (data) {
+            $scope.speeches = data;
+            $scope.count1 = (pageNum-1) * 10;
+            $scope.id = selectedMember;
+            $scope.totalItems1 = pageNum*$scope.itemsPerPage1+1;
+        });
+    };
 
 }]);
 
 app.controller('MainCtrl', ['$scope', function ($scope) {
 
+}]);
+
+app.service('memberService', ['$resource', function ($resource) {
+    this.MembersR = $resource(host + '/members');
+    this.SpeechesR = $resource(host + '/members/:id/speeches');
 }]);

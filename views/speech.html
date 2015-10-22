@@ -1,0 +1,17 @@
+<div class="panel-default" ng-repeat="s in speeches">
+    <uib-accordion>
+        <uib-accordion-group is-open="open" panel-class="panel panel-primary member">
+            <uib-accordion-heading>
+                <span>{{$index + 1 + count1}}. {{s.creator.firstName}} {{s.creator.lastName}}</span>
+                <span ng-if="s.sessionDate">Date: {{s.sessionDate}}</span>
+                <i class="pull-right glyphicon"
+                   ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
+            </uib-accordion-heading>
+            <div ng-if="s.text" class="text-justify">{{s.text}}</div>
+        </uib-accordion-group>
+    </uib-accordion>
+</div>
+<uib-pagination total-items="totalItems1" ng-model="currentPage1" max-size="maxSize1"
+                class="pagination-md"
+                boundary-links="true" rotate="false"
+                ng-change="getSpeeches(id, currentPage1)"></uib-pagination>

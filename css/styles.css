@@ -1,3 +1,8 @@
+.navbar-default .navbar-brand {
+    color: #021C35;
+    font-size: 150%;
+}
+
 #sidebar {
     height: 100%;
     position: fixed;
@@ -39,9 +44,15 @@ section {
     padding-top: 15px;
 }
 
-#sidebar > .nav-stacked > li > a:hover, #sidebar > .nav-stacked > li > .active {
+#sidebar > .nav-stacked > li > a:hover,
+#sidebar > .nav-stacked > li > .active,
+#sidebar > .nav-stacked > li > .focus {
     font-size: 140%;
     color: indianred;
+}
+
+a {
+    outline: none;
 }
 
 #sidebar > .nav-stacked > li > a {
@@ -67,3 +78,33 @@ body {
     background-color: #000000;
 }
 */
+
+/* fixes some angular bootstrap errors*/
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.member {
+    padding: 0;
+}
+
+.panel-group {
+    margin: 2px;
+}
+
+/* Example sections*/
+.example-section {
+    height: 100vh;
+    padding-top: 30px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
